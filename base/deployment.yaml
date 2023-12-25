@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: decisionapp
+  namespace: cp4na
+  labels:
+    k8s-app: decisionapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: decisionapp
+  template:
+    metadata:
+      name: decisionapp
+      labels:
+        k8s-app: decisionapp
+    spec:
+      containers:
+        - name: decisionapp
+          image: 'agrimaldi/decisionapp:2.1.2'
+          imagePullPolicy: IfNotPresent
+      serviceAccountName: decisionapp
+      serviceAccount: decisionapp

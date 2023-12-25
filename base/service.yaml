@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: decisionapp
+  namespace: cp4na
+  labels:
+    k8s-app: decisionapp
+spec:
+  ports:
+    - name: app
+      protocol: TCP
+      port: 8111
+      targetPort: 5000
+  selector:
+    k8s-app: decisionapp
+  type: ClusterIP
