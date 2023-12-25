@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: decisionapp
-          image: 'agrimaldi/decisionapp:2.1.2'
+          image: 'agrimaldi/decisionapp:3.0.0'
           imagePullPolicy: IfNotPresent
       serviceAccountName: decisionapp
       serviceAccount: decisionapp
